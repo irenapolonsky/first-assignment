@@ -18,4 +18,16 @@ if [ ${status} -eq "0" ];
         else
         echo "********update of ssh_config of server1 failed ***status $? ******"
 fi
+
+echo "*** copying private and public keys to the default directories. replace the old if existed"
+echo "***setting permissions to 400 ***"
+cat /vagrant/fixScripts/server2_id_rsa_pub.txt  > /home/vagrant/.ssh/id_rsa_pub
+chmod 400 /home/vagrant/.ssh/id_rsa_pub
+cat /vagrant/fixScripts/server2_id_rsa.txt  > /home/vagrant/.ssh/id_rsa
+chmod 400 ~/home/vagrant/.ssh/id_rsa
+
+echo "***append a public key to the authorized_keys on the target server***"
+cat /vagrant/fixScripts/server1_id_rsa_pub.txt  >> /home/vagrant/.ssh/authorized_keys
+
+
 echo "End exercise 5 on server2"
