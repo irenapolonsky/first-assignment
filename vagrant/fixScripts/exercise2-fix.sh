@@ -4,7 +4,10 @@
 #What went wrong? Please fix the issue and add the command that fixes the issue to exercise2-fix.sh
 #add fix to exercise2 here
 
-echo "Start excersice 2------" 
+echo "=======================================Start excersice 2==============================================="
+echo "=======================================Start excersice 2==============================================="
+echo "=======================================Start excersice 2==============================================="
+
 echo "-----going to remove www.ascii-art.de from etc hosts table-------"
 sudo sed -i '/127\.0\.0\.1 www\.ascii-art\.de/d' /etc/hosts
 status=$?
@@ -19,4 +22,6 @@ else
         echo "********something went wrong ***status $? ******"
 fi
 
-echo "End excersice 2------" 
+echo "=========================================End excersice 2==============================================="
+echo "=========================================End excersice 2==============================================="
+echo "=========================================End excersice 2==============================================="
